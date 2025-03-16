@@ -1,5 +1,11 @@
 # Проект обстановки квартиры
 
+### Технологии
+для визуализации схем в readme.md нужно установить плагин mermaid
+- Java
+- Docker
+- Postgres
+
 ### Docker
 
 #### запуск в контейнере необходимой версии PostgreSQL, переопределение суперпользователя и создание базы данных с нужным именем
@@ -34,32 +40,48 @@ psql -U postgres -d apartment
 city ||--o{ apartment_address: Один город может иметь много адресов квартир (связь "один ко многим").
 
 item_categories ||--o{ items: Одна категория может содержать много товаров (связь "один ко многим").
+
 ```mermaid
 erDiagram
     city ||--o{ apartment_address : "1 to many"
+    apartment_address ||--o{ apartment_stuff : "1 to many"
+    rooms ||--o{ apartment_stuff : "1 to many"
+    items ||--o{ apartment_stuff : "1 to many"
     item_categories ||--o{ items : "1 to many"
 
-    city {
-        int id PK
-        string name
+    apartment {
+        int id
+        varchar(100) name
     }
 
     apartment_address {
-        int id PK
-        int city_id FK
-        string street
-        string house
-        string flat
+        int id
+        int city_id
+        varchar(100) street
+        varchar(10) house
+        varchar(10) flat_number
+    }
+
+    rooms {
+        int id
+        varchar(25) name
     }
 
     item_categories {
-        int id PK
-        string category
+        int id
+        varchar(100) category
     }
 
     items {
-        int id PK
-        int category_id FK
-        string item_name
+        int id
+        int category_id
+        text item_name
+    }
+
+    apartment_stuff {
+        int id
+        int flat_id
+        int room_id
+        int item_id
     }
 ```
