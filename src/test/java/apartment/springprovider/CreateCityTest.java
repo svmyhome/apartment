@@ -1,12 +1,14 @@
-package apartment;
+package apartment.springprovider;
 
+import apartment.CityManagerSpring;
+import apartment.ICityManager;
 import apartment.domain.City;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class CreateCityTest {
-    ICityManager cm = new CityManager();
+    ICityManager cm = new CityManagerSpring();
     private int createdCityId;
 
     @BeforeEach
