@@ -1,4 +1,4 @@
-package apartment.domain;
+package apartment.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,6 +9,6 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class City {
-    String name;
+public class CityEntity {
+    private String name;
 }

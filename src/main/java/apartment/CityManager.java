@@ -1,6 +1,6 @@
 package apartment;
 
-import apartment.domain.City;
+import apartment.entity.CityEntity;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
@@ -16,7 +16,7 @@ public class CityManager implements ICityManager {
     private DataSource ds = DataSourceProvider.INSTANCE.getDataSource();
 
     @Override
-    public int createCity(City city) {
+    public int createCity(CityEntity city) {
 
         try (Connection connection = ds.getConnection();
              PreparedStatement ps = connection.prepareStatement("INSERT INTO public.city (name)\n" +
@@ -51,8 +51,8 @@ public class CityManager implements ICityManager {
     }
 
     @Override
-    public List<City> findByName(String name) {
-        List<City> result = new ArrayList<>();
+    public List<CityEntity> findByName(String name) {
+        List<CityEntity> result = new ArrayList<>();
 
         try (Connection connection = ds.getConnection();
              PreparedStatement ps = connection.prepareStatement(
@@ -60,7 +60,7 @@ public class CityManager implements ICityManager {
             ps.setString(1, name);
             ResultSet resultSet = ps.executeQuery();
             while (resultSet.next()) {
-                result.add(City.builder()
+                result.add(CityEntity.builder()
                         .name(resultSet.getString("name"))
                         .build());
             }

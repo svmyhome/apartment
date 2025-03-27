@@ -1,13 +1,13 @@
 package apartment;
 
-import apartment.domain.City;
+import apartment.entity.CityEntity;
 
 import java.util.List;
 
 public interface ICityManager {
-    int createCity(City city);
+    int createCity(CityEntity city);
 
     int deleteCity(int id);
 
-    List<City> findByName(String name);
+    List<CityEntity> findByName(String name);
 }

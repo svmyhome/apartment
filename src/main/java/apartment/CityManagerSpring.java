@@ -1,6 +1,6 @@
 package apartment;
 
-import apartment.domain.City;
+import apartment.entity.CityEntity;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 
@@ -12,7 +12,7 @@ public class CityManagerSpring implements ICityManager {
     private JdbcTemplate jdbcTemplate = new JdbcTemplate(DataSourceProvider.INSTANCE.getDataSource());
 
     @Override
-    public int createCity(City city) {
+    public int createCity(CityEntity city) {
         return new SimpleJdbcInsert(jdbcTemplate)
                 .withTableName("city")
                 .usingGeneratedKeyColumns("id")
@@ -28,7 +28,7 @@ public class CityManagerSpring implements ICityManager {
 
     // #TODO
     @Override
-    public List<City> findByName(String name) {
+    public List<CityEntity> findByName(String name) {
         return List.of();
     }
 }

@@ -1,6 +1,6 @@
 package apartment;
 
-import apartment.domain.City;
+import apartment.entity.CityEntity;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -13,7 +13,7 @@ public class GetCityTest {
     @Test
     void getCityTest() {
 
-        List<City> actualResult = cm.findByName("Вологда");
+        List<CityEntity> actualResult = cm.findByName("Вологда");
         actualResult.forEach(System.out::println);
     }
 }
