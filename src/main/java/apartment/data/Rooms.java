@@ -3,10 +3,13 @@ package apartment.data;
 import java.util.Arrays;
 
 public enum Rooms {
-    CORNER("Коридор"),
-    BATH("Сан узел"),
+    CORRIDOR("Коридор"),
+    BATHROOM("Сан узел"),
     BEDROOM("Спальня"),
-    ROOM("Гостиная");
+    HALL("Прихожая"),
+    KITCHEN("Кухня"),
+    BALCONY("Балкон"),
+    LIVING_ROOM("Гостиная");
 
     public String getDescription() {
         return description;

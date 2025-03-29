@@ -1,4 +1,4 @@
-package apartment;
+package apartment.db;
 
 import org.postgresql.ds.PGSimpleDataSource;
 

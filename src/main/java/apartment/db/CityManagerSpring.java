@@ -1,4 +1,4 @@
-package apartment;
+package apartment.db;
 
 import apartment.entity.CityEntity;
 import org.springframework.jdbc.core.JdbcTemplate;

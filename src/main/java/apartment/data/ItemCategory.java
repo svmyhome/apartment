@@ -3,12 +3,10 @@ package apartment.data;
 import java.util.Arrays;
 
 
-// TODO RENAME
 public enum ItemCategory {
-    CORNER("Коридор"),
-    BATH("Сан узел"),
-    BEDROOM("Спальня"),
-    ROOM("Гостиная");
+    ELECTRONICS("Электроника"),
+    FURNITURE("Мебель"),
+    OTHER("Прочее");
 
     public String getDescription() {
         return description;

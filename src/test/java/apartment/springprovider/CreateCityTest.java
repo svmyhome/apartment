@@ -1,7 +1,7 @@
 package apartment.springprovider;
 
-import apartment.CityManagerSpring;
-import apartment.ICityManager;
+import apartment.db.CityManagerSpring;
+import apartment.db.ICityManager;
 import apartment.entity.CityEntity;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
