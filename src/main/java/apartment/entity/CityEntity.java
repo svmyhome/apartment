@@ -11,4 +11,13 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class CityEntity {
     private String name;
+
+    public String getName() {
+        return name;
+    }
+
+    public CityEntity setName(String name) {
+        this.name = name;
+        return this;
+    }
 }
