@@ -1,7 +1,7 @@
 package apartment;
 
 import apartment.db.CityManager;
-import apartment.db.ICityManager;
+import apartment.db.CityRepository;
 import apartment.entity.CityEntity;
 import org.junit.jupiter.api.Test;
 
@@ -10,12 +10,12 @@ import java.util.List;
 
 public class GetCityTest {
 
-    private ICityManager cm = new CityManager();
+    private CityRepository cm = new CityManager();
 
     @Test
     void getCityTest() {
 
-        List<CityEntity> actualResult = cm.findByName("Вологда");
+        List<CityEntity> actualResult = cm.getByName("Вологда");
         actualResult.forEach(System.out::println);
     }
 }

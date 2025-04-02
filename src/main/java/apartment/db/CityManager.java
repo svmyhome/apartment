@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class CityManager implements ICityManager {
+public class CityManager implements CityRepository {
     private DataSource ds = DataSourceProvider.INSTANCE.getDataSource();
 
     @Override
@@ -50,8 +50,14 @@ public class CityManager implements ICityManager {
         return -1;
     }
 
+    //TODO
     @Override
-    public List<CityEntity> findByName(String name) {
+    public List<CityEntity> getAll() {
+        return List.of();
+    }
+
+    @Override
+    public List<CityEntity> getByName(String name) {
         List<CityEntity> result = new ArrayList<>();
 
         try (Connection connection = ds.getConnection();

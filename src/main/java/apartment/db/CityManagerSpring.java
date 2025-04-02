@@ -7,7 +7,7 @@ import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import java.util.List;
 import java.util.Map;
 
-public class CityManagerSpring implements ICityManager {
+public class CityManagerSpring implements CityRepository {
 
     private JdbcTemplate jdbcTemplate = new JdbcTemplate(DataSourceProvider.INSTANCE.getDataSource());
 
@@ -26,9 +26,15 @@ public class CityManagerSpring implements ICityManager {
         return jdbcTemplate.update("DELETE FROM public.city WHERE id = ?", id);
     }
 
+    //TODo
+    @Override
+    public List<CityEntity> getAll() {
+        return List.of();
+    }
+
     // #TODO
     @Override
-    public List<CityEntity> findByName(String name) {
+    public List<CityEntity> getByName(String name) {
         return List.of();
     }
 }
