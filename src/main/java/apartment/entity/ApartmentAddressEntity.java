@@ -1,6 +1,6 @@
 package apartment.entity;
 
-public class AddressEntity {
+public class ApartmentAddressEntity {
     private int id;
     private int city_id;
     private String street;
