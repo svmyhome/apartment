@@ -41,9 +41,9 @@ public class PostgresCityManagerRepository implements CityRepository {
 
     // #TODO
     @Override
-    public @Nullable List<CityEntity> getByName(String name) {
+    public @Nullable CityEntity getByName(String name) {
         try {
-            return List.of(jdbcTemplate.queryForObject("SELECT * FROM city WHERE name = ?", new CityEntityRowMapper(), name));
+            return jdbcTemplate.queryForObject("SELECT * FROM city WHERE name = ?", new CityEntityRowMapper(), name);
         } catch (EmptyResultDataAccessException e) {
             return null;
         }

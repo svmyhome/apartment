@@ -12,5 +12,5 @@ public interface CityRepository {
     int deleteCity(int id);
 
     List<CityEntity> getAllCity();
-    List<CityEntity> getByName(String name);
+    CityEntity getByName(String name);
 }

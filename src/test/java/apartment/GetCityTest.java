@@ -3,6 +3,7 @@ package apartment;
 import apartment.db.impl.CityManager;
 import apartment.db.CityRepository;
 import apartment.entity.CityEntity;
+import javax.sound.midi.Soundbank;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -15,7 +16,8 @@ public class GetCityTest {
     @Test
     void getCityTest() {
 
-        List<CityEntity> actualResult = cm.getByName("Вологда");
-        actualResult.forEach(System.out::println);
+        CityEntity actualResult = cm.getByName("Вологда");
+        System.out.println(actualResult);
+
     }
 }

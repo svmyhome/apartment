@@ -15,7 +15,7 @@ public class GetCityTest {
     @Test
     void getCityTest() {
 
-        List<CityEntity> actualResult = cm.getByName("Вологда");
-        actualResult.forEach(System.out::println);
+        CityEntity actualResult = cm.getByName("Вологда");
+        System.out.println(actualResult);
     }
 }

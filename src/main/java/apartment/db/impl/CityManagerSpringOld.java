@@ -35,7 +35,7 @@ public class CityManagerSpringOld implements CityRepository {
 
     // #TODO
     @Override
-    public List<CityEntity> getByName(String name) {
-        return List.of();
+    public CityEntity getByName(String name) {
+        return null;
     }
 }

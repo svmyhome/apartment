@@ -55,17 +55,10 @@ public class CityManager implements CityRepository {
     //TODO
     @Override
     public List<CityEntity> getAllCity() {
-        return List.of();
-    }
-
-    @Override
-    public List<CityEntity> getByName(String name) {
         List<CityEntity> result = new ArrayList<>();
-
         try (Connection connection = ds.getConnection();
              PreparedStatement ps = connection.prepareStatement(
-                     "SELECT * FROM public.city WHERE name = ?")) {
-            ps.setString(1, name);
+                     "SELECT * FROM public.city")) {
             ResultSet resultSet = ps.executeQuery();
             while (resultSet.next()) {
                 result.add(CityEntity.builder()
@@ -77,5 +70,27 @@ public class CityManager implements CityRepository {
             e.printStackTrace();
         }
         return Collections.emptyList();
+    }
+
+    @Override
+    public CityEntity getByName(String name) {
+        CityEntity result = null;
+
+        try (Connection connection = ds.getConnection();
+             PreparedStatement ps = connection.prepareStatement(
+                     "SELECT * FROM public.city WHERE name = ?")) {
+            ps.setString(1, name);
+            ResultSet resultSet = ps.executeQuery();
+
+            while (resultSet.next()) {
+                result = CityEntity.builder()
+                        .name(resultSet.getString("name"))
+                        .build();
+            }
+            return result;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }
