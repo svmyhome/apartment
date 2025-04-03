@@ -1,5 +1,7 @@
-package apartment.db;
+package apartment.db.impl;
 
+import apartment.db.CityRepository;
+import apartment.db.DataSourceProvider;
 import apartment.entity.CityEntity;
 
 import javax.sql.DataSource;
@@ -16,7 +18,7 @@ public class CityManager implements CityRepository {
     private DataSource ds = DataSourceProvider.INSTANCE.getDataSource();
 
     @Override
-    public int createCity(CityEntity city) {
+    public int addCity(CityEntity city) {
 
         try (Connection connection = ds.getConnection();
              PreparedStatement ps = connection.prepareStatement("INSERT INTO public.city (name)\n" +
@@ -52,7 +54,7 @@ public class CityManager implements CityRepository {
 
     //TODO
     @Override
-    public List<CityEntity> getAll() {
+    public List<CityEntity> getAllCity() {
         return List.of();
     }
 

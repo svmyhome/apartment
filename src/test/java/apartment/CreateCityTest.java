@@ -1,6 +1,6 @@
 package apartment;
 
-import apartment.db.CityManager;
+import apartment.db.impl.CityManager;
 import apartment.db.CityRepository;
 import apartment.entity.CityEntity;
 import org.junit.jupiter.api.AfterEach;
@@ -13,7 +13,7 @@ public class CreateCityTest {
 
     @BeforeEach
     void addCity() {
-        createdCityId = cm.createCity(CityEntity.builder()
+        createdCityId = cm.addCity(CityEntity.builder()
                 .name("Иваново")
                 .build());
     }

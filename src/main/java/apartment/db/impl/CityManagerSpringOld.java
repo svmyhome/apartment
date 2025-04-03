@@ -1,18 +1,19 @@
-package apartment.db;
+package apartment.db.impl;
 
+import apartment.db.CityRepository;
+import apartment.db.DataSourceProvider;
 import apartment.entity.CityEntity;
+import java.util.List;
+import java.util.Map;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 
-import java.util.List;
-import java.util.Map;
+public class CityManagerSpringOld implements CityRepository {
 
-public class CityManagerSpring implements CityRepository {
-
-    private JdbcTemplate jdbcTemplate = new JdbcTemplate(DataSourceProvider.INSTANCE.getDataSource());
+    private static final JdbcTemplate jdbcTemplate = new JdbcTemplate(DataSourceProvider.INSTANCE.getDataSource());
 
     @Override
-    public int createCity(CityEntity city) {
+    public int addCity(CityEntity city) {
         return new SimpleJdbcInsert(jdbcTemplate)
                 .withTableName("city")
                 .usingGeneratedKeyColumns("id")
@@ -28,7 +29,7 @@ public class CityManagerSpring implements CityRepository {
 
     //TODo
     @Override
-    public List<CityEntity> getAll() {
+    public List<CityEntity> getAllCity() {
         return List.of();
     }
 

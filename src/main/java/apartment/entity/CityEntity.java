@@ -10,6 +10,16 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CityEntity {
+    public int getId() {
+        return id;
+    }
+
+    public CityEntity setId(int id) {
+        this.id = id;
+        return this;
+    }
+
+    private int id;
     private String name;
 
     public String getName() {

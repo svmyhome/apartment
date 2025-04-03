@@ -6,11 +6,11 @@ import java.util.List;
 
 public interface CityRepository {
 
-    int createCity(CityEntity city);
+    int addCity(CityEntity city);
 
     // #TODO
     int deleteCity(int id);
 
-    List<CityEntity> getAll();
+    List<CityEntity> getAllCity();
     List<CityEntity> getByName(String name);
 }
