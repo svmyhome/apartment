@@ -18,6 +18,8 @@ public class Main {
             CityEntity city = new CityEntity()
                     .setName(cityName);
             cityRepository.addCity(city);
+        } else {
+            JOptionPane.showInputDialog("Введите название города снова: ");
         }
 
         cityRepository.getAllCity().forEach(System.out::println);
