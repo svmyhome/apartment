@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Map;
 import org.springframework.lang.Nullable;
 
-public class PostgresCityManagerRepository implements CityRepository {
+public class CityManagerRepositoryPostgres implements CityRepository {
 
     private static final JdbcTemplate jdbcTemplate = new JdbcTemplate(DataSourceProvider.INSTANCE.getDataSource());
 
