@@ -2,6 +2,7 @@ package apartment.entity;
 
 public class ApartmentAddressEntity {
     private int id;
+    private int accountId;
     private int cityId;
     private String street;
     private String house;
@@ -13,6 +14,15 @@ public class ApartmentAddressEntity {
 
     public ApartmentAddressEntity setId(int id) {
         this.id = id;
+        return this;
+    }
+
+    public int getAccountId() {
+        return accountId;
+    }
+
+    public ApartmentAddressEntity setAccount_id(int account_id) {
+        this.accountId = account_id;
         return this;
     }
 

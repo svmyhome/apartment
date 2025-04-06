@@ -12,6 +12,14 @@ $$;
 \c apartment;
 
 -- Создание таблицы city
+CREATE TABLE IF NOT EXISTS public.account
+(
+    id   SERIAL PRIMARY KEY,
+    account VARCHAR(100) NOT NULL UNIQUE,
+    balance DECIMAL(10, 2) NOT NULL
+);
+
+-- Создание таблицы city
 CREATE TABLE IF NOT EXISTS public.city
 (
     id   SERIAL PRIMARY KEY,
@@ -22,11 +30,13 @@ CREATE TABLE IF NOT EXISTS public.city
 CREATE TABLE IF NOT EXISTS public.apartment_address
 (
     id          SERIAL PRIMARY KEY,
+    account_id  INTEGER      NOT NULL,
     city_id     INTEGER      NOT NULL,
     street      VARCHAR(100) NOT NULL,
     house       VARCHAR(10)  NOT NULL,
     flat_number VARCHAR(10)  NOT NULL,
     CONSTRAINT fk_city FOREIGN KEY (city_id) REFERENCES city (id) ON DELETE RESTRICT,
+    CONSTRAINT fk_account FOREIGN KEY (account_id) REFERENCES account (id) ON DELETE RESTRICT,
     CONSTRAINT unique_address UNIQUE (city_id, street, house, flat_number)
 );
 
