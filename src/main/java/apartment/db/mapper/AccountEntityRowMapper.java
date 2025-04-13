@@ -1,4 +1,4 @@
-package apartment.db;
+package apartment.db.mapper;
 
 import apartment.entity.AccountEntity;
 import java.sql.ResultSet;

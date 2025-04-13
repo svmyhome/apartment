@@ -1,6 +1,6 @@
 package apartment.db.impl;
 
-import apartment.db.CityEntityRowMapper;
+import apartment.db.mapper.CityEntityRowMapper;
 import apartment.db.repository.CityRepository;
 import apartment.db.DataSourceProvider;
 import apartment.entity.CityEntity;
