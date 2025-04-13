@@ -1,8 +1,7 @@
 package apartment.db.impl;
 
 import apartment.db.AccountEntityRowMapper;
-import apartment.db.AccountRepository;
-import apartment.db.CityEntityRowMapper;
+import apartment.db.repository.AccountRepository;
 import apartment.db.DataSourceProvider;
 import apartment.entity.AccountEntity;
 import java.util.List;

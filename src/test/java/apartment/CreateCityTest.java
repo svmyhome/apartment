@@ -1,7 +1,7 @@
 package apartment;
 
 import apartment.db.impl.CityManager;
-import apartment.db.CityRepository;
+import apartment.db.repository.CityRepository;
 import apartment.entity.CityEntity;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;

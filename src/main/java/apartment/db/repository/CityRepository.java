@@ -1,4 +1,4 @@
-package apartment.db;
+package apartment.db.repository;
 
 import apartment.entity.CityEntity;
 

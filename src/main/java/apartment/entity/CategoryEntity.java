@@ -2,7 +2,7 @@ package apartment.entity;
 
 import apartment.data.ItemCategory;
 
-public class ItemCategoryEntity {
+public class CategoryEntity {
     private int id;
     private ItemCategory category;
 
@@ -10,7 +10,7 @@ public class ItemCategoryEntity {
         return category;
     }
 
-    public ItemCategoryEntity setCategory(ItemCategory category) {
+    public CategoryEntity setCategory(ItemCategory category) {
         this.category = category;
         return this;
     }
@@ -19,7 +19,7 @@ public class ItemCategoryEntity {
         return id;
     }
 
-    public ItemCategoryEntity setId(int id) {
+    public CategoryEntity setId(int id) {
         this.id = id;
         return this;
     }

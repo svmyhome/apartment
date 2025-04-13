@@ -1,7 +1,7 @@
 package apartment;
 
-import apartment.db.AccountRepository;
-import apartment.db.CityRepository;
+import apartment.db.repository.AccountRepository;
+import apartment.db.repository.CityRepository;
 import apartment.db.impl.AccountManagerRepositoryPostgres;
 import apartment.db.impl.CityManagerRepositoryPostgres;
 import apartment.entity.AccountEntity;
@@ -35,8 +35,6 @@ public class Main {
         AccountEntity account = new AccountEntity()
                 .setAccount(accountName)
                 .setBalance(balance);
-
-
 
 
         accountRepository.addAccount(account);

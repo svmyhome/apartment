@@ -1,4 +1,4 @@
-package apartment.db;
+package apartment.db.repository;
 
 import apartment.entity.ApartmentAddressEntity;
 import java.util.List;
@@ -11,5 +11,5 @@ public interface ApartmentAddressRepository {
     int deleteAddress(int id);
 
     List<ApartmentAddressEntity> getAll();
-    List<ApartmentAddressEntity> getByName(String name);
+    List<ApartmentAddressEntity> getByStreet(String name);
 }

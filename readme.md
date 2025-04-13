@@ -43,6 +43,16 @@ psql -U postgres -d apartment
 ./restart-docker-compose.sh
 ```
 
+```mermaid
+flowchart TD
+    AccountEntity -- used by --> AccountRepository
+    AccountRepository -- uses --> AccountEntityRowMapper
+    AccountEntityRowMapper -- implements --> RowMapper[RowMapper<AccountEntity>]
+
+    AccountManagerRepositoryPostgres -- implements --> AccountRepository
+```
+
+
 Связи:
 
 city ||--o{ apartment_address: Один город может иметь много адресов квартир (связь "один ко многим").
