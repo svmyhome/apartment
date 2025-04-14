@@ -21,8 +21,8 @@ public class ApartmentAddressEntity {
         return accountId;
     }
 
-    public ApartmentAddressEntity setAccount_id(int account_id) {
-        this.accountId = account_id;
+    public ApartmentAddressEntity setAccountId(int accountId) {
+        this.accountId = accountId;
         return this;
     }
 
