@@ -1,6 +1,6 @@
 package apartment.springprovider;
 
-import apartment.db.impl.CityManager;
+import apartment.db.impl.old.CityManager;
 import apartment.db.repository.CityRepository;
 import apartment.entity.CityEntity;
 import org.junit.jupiter.api.Test;

@@ -1,4 +1,4 @@
-package apartment.db.impl;
+package apartment.db.impl.old;
 
 import apartment.db.repository.CityRepository;
 import apartment.db.DataSourceProvider;

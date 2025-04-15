@@ -2,16 +2,16 @@ package apartment;
 
 import apartment.db.repository.AccountRepository;
 import apartment.db.repository.CityRepository;
-import apartment.db.impl.AccountManagerRepositoryPostgres;
-import apartment.db.impl.CityManagerRepositoryPostgres;
+import apartment.db.impl.AccountRepositoryManagerPostgres;
+import apartment.db.impl.CityRepositoryManagerPostgres;
 import apartment.entity.AccountEntity;
 import apartment.entity.CityEntity;
 import javax.swing.*;
 
 public class Main {
 
-    static CityRepository cityRepository = new CityManagerRepositoryPostgres();
-    static AccountRepository accountRepository = new AccountManagerRepositoryPostgres();
+    static CityRepository cityRepository = new CityRepositoryManagerPostgres();
+    static AccountRepository accountRepository = new AccountRepositoryManagerPostgres();
 
     public static void main(String[] args) {
 

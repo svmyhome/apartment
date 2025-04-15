@@ -1,6 +1,6 @@
 package apartment.springprovider;
 
-import apartment.db.impl.CityManagerRepositoryPostgres;
+import apartment.db.impl.CityRepositoryManagerPostgres;
 import apartment.db.repository.CityRepository;
 import apartment.entity.CityEntity;
 import org.junit.jupiter.api.AfterEach;
@@ -8,7 +8,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class CreateCityTest {
-    CityRepository cm = new CityManagerRepositoryPostgres();
+    CityRepository cm = new CityRepositoryManagerPostgres();
     private int createdCityId;
 
     @BeforeEach

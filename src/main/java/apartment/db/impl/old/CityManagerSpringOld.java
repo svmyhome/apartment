@@ -1,18 +1,14 @@
-package apartment.db.impl;
+package apartment.db.impl.old;
 
-import apartment.db.mapper.CityEntityRowMapper;
 import apartment.db.repository.CityRepository;
 import apartment.db.DataSourceProvider;
 import apartment.entity.CityEntity;
-import org.springframework.dao.EmptyResultDataAccessException;
+import java.util.List;
+import java.util.Map;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 
-import java.util.List;
-import java.util.Map;
-import org.springframework.lang.Nullable;
-
-public class CityManagerRepositoryPostgres implements CityRepository {
+public class CityManagerSpringOld implements CityRepository {
 
     private static final JdbcTemplate jdbcTemplate = new JdbcTemplate(DataSourceProvider.INSTANCE.getDataSource());
 
@@ -24,8 +20,6 @@ public class CityManagerRepositoryPostgres implements CityRepository {
                 .executeAndReturnKey(Map.of(
                         "name", city.getName()
                 )).intValue();
-
-        //        template.update("INSERT INTO city (name) VALUES(?)", cityEntity.getName());
     }
 
     @Override
@@ -36,16 +30,12 @@ public class CityManagerRepositoryPostgres implements CityRepository {
     //TODo
     @Override
     public List<CityEntity> getAllCity() {
-        return jdbcTemplate.query("SELECT * FROM city", new CityEntityRowMapper());
+        return List.of();
     }
 
     // #TODO
     @Override
-    public @Nullable CityEntity getByName(String name) {
-        try {
-            return jdbcTemplate.queryForObject("SELECT * FROM city WHERE name = ?", new CityEntityRowMapper(), name);
-        } catch (EmptyResultDataAccessException e) {
-            return null;
-        }
+    public CityEntity getByName(String name) {
+        return null;
     }
 }
