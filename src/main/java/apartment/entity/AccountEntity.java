@@ -31,4 +31,13 @@ public class AccountEntity {
         this.balance = balance;
         return this;
     }
+
+    @Override
+    public String toString() {
+        return "AccountEntity{" +
+                "id=" + id +
+                ", account='" + account + '\'' +
+                ", balance=" + balance +
+                '}';
+    }
 }
