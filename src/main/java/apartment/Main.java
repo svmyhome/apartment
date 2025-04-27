@@ -15,29 +15,32 @@ public class Main {
 
     public static void main(String[] args) {
 
-        String cityName = JOptionPane.showInputDialog("Введите название города: ");
-        CityEntity cityEntityList = cityRepository.getByName(cityName);
-
-        if (cityEntityList == null) {
-            CityEntity city = new CityEntity()
-                    .setName(cityName);
-            cityRepository.addCity(city);
-        } else {
-            JOptionPane.showInputDialog("Введите название города снова: ");
-        }
-
-        cityRepository.getAllCity().forEach(System.out::println);
-        System.out.println(cityRepository.getByName("Вологда"));
-
         String accountName = JOptionPane.showInputDialog("Введите имя: ");
         double balance = Double.parseDouble(JOptionPane.showInputDialog("Введите балансе: "));
+        AccountEntity account = accountRepository.getByName(accountName);
+        if (account == null) {
+            AccountEntity newAccount = new AccountEntity()
+                    .setAccount(accountName)
+                    .setBalance(balance);
+            accountRepository.addAccount(newAccount);
+        } else {
+            JOptionPane.showInputDialog("Введите Account повторно : ");
+        }
 
-        AccountEntity account = new AccountEntity()
-                .setAccount(accountName)
-                .setBalance(balance);
+//        String cityName = JOptionPane.showInputDialog("Введите название города: ");
+//        CityEntity cityEntityList = cityRepository.getByName(cityName);
 
+//        if (cityEntityList == null) {
+//            CityEntity city = new CityEntity()
+//                    .setName(cityName);
+//            cityRepository.addCity(city);
+//        } else {
+//            JOptionPane.showInputDialog("Введите название города снова: ");
+//        }
+//
+//        cityRepository.getAllCity().forEach(System.out::println);
+//        System.out.println(cityRepository.getByName("Вологда"));
 
-        accountRepository.addAccount(account);
         accountRepository.getAll().forEach(System.out::println);
         System.out.println(accountRepository.getByName("Voldemar"));
 
