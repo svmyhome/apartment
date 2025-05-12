@@ -1,6 +1,6 @@
 package apartment.entity;
 
-public class ItemsEntity {
+public class ItemEntity {
     private int id;
     private int categoryId;
     private String itemName;
@@ -9,7 +9,7 @@ public class ItemsEntity {
         return id;
     }
 
-    public ItemsEntity setId(int id) {
+    public ItemEntity setId(int id) {
         this.id = id;
         return this;
     }
@@ -18,7 +18,7 @@ public class ItemsEntity {
         return categoryId;
     }
 
-    public ItemsEntity setCategoryId(int categoryId) {
+    public ItemEntity setCategoryId(int categoryId) {
         this.categoryId = categoryId;
         return this;
     }
@@ -27,7 +27,7 @@ public class ItemsEntity {
         return itemName;
     }
 
-    public ItemsEntity setItemName(String itemName) {
+    public ItemEntity setItemName(String itemName) {
         this.itemName = itemName;
         return this;
     }

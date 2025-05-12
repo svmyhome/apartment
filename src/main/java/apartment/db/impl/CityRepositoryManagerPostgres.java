@@ -1,15 +1,14 @@
 package apartment.db.impl;
 
+import apartment.db.DataSourceProvider;
 import apartment.db.mapper.CityEntityRowMapper;
 import apartment.db.repository.CityRepository;
-import apartment.db.DataSourceProvider;
 import apartment.entity.CityEntity;
+import java.util.List;
+import java.util.Map;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
-
-import java.util.List;
-import java.util.Map;
 import org.springframework.lang.Nullable;
 
 public class CityRepositoryManagerPostgres implements CityRepository {

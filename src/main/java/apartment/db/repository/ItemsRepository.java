@@ -1,11 +1,12 @@
 package apartment.db.repository;
 
-import apartment.entity.ItemsEntity;
+import apartment.entity.ItemEntity;
 import java.util.List;
 
 public interface ItemsRepository {
-    int createItem(ItemsEntity item);
+    int createItem(ItemEntity item);
 
-    List<ItemsEntity> getAll();
-    ItemsEntity getByName(String name);
+    List<ItemEntity> getAll();
+
+    ItemEntity getByName(String name);
 }

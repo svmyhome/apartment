@@ -1,7 +1,6 @@
 package apartment.db.repository;
 
 import apartment.entity.CityEntity;
-
 import java.util.List;
 
 public interface CityRepository {
@@ -12,5 +11,6 @@ public interface CityRepository {
     int deleteCity(int id);
 
     List<CityEntity> getAllCity();
+
     CityEntity getByName(String name);
 }

@@ -1,7 +1,7 @@
 package apartment.db.impl.old;
 
-import apartment.db.repository.CityRepository;
 import apartment.db.DataSourceProvider;
+import apartment.db.repository.CityRepository;
 import apartment.entity.CityEntity;
 import java.util.List;
 import java.util.Map;

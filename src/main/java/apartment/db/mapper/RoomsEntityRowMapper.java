@@ -1,16 +1,16 @@
 package apartment.db.mapper;
 
-import apartment.data.Rooms;
-import apartment.entity.RoomsEntity;
+import apartment.data.Room;
+import apartment.entity.RoomEntity;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import org.springframework.jdbc.core.RowMapper;
 
-public class RoomsEntityRowMapper implements RowMapper<RoomsEntity> {
+public class RoomsEntityRowMapper implements RowMapper<RoomEntity> {
     @Override
-    public RoomsEntity mapRow(ResultSet rs, int rowNum) throws SQLException {
-        return new RoomsEntity()
+    public RoomEntity mapRow(ResultSet rs, int rowNum) throws SQLException {
+        return new RoomEntity()
                 .setId(rs.getInt("id"))
-                .setRoomName(Rooms.valueOf(rs.getString("roomName")));
+                .setRoomName(Room.valueOf(rs.getString("roomName")));
     }
 }

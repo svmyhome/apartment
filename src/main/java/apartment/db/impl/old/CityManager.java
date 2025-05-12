@@ -1,10 +1,8 @@
 package apartment.db.impl.old;
 
-import apartment.db.repository.CityRepository;
 import apartment.db.DataSourceProvider;
+import apartment.db.repository.CityRepository;
 import apartment.entity.CityEntity;
-
-import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -13,6 +11,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import javax.sql.DataSource;
 
 public class CityManager implements CityRepository {
     private DataSource ds = DataSourceProvider.INSTANCE.getDataSource();

@@ -11,5 +11,6 @@ public interface ApartmentAddressRepository {
     int deleteAddress(int id);
 
     List<ApartmentAddressEntity> getAll();
+
     List<ApartmentAddressEntity> getByStreet(String name);
 }

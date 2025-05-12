@@ -1,25 +1,25 @@
 package apartment.entity;
 
-import apartment.data.Rooms;
+import apartment.data.Room;
 
-public class RoomsEntity {
+public class RoomEntity {
     private int id;
-    private Rooms roomName;
+    private Room roomName;
 
     public int getId() {
         return id;
     }
 
-    public RoomsEntity setId(int id) {
+    public RoomEntity setId(int id) {
         this.id = id;
         return this;
     }
 
-    public Rooms getRoomName() {
+    public Room getRoomName() {
         return roomName;
     }
 
-    public RoomsEntity setRoomName(Rooms roomName) {
+    public RoomEntity setRoomName(Room roomName) {
         this.roomName = roomName;
         return this;
     }

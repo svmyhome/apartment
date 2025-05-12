@@ -8,6 +8,7 @@ public interface CategoryRepository {
     int createCategory(Category category);
 
     List<Category> getAll();
+
     Category getByCategory(String category);
 
 }

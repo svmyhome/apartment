@@ -1,8 +1,7 @@
 package apartment.db;
 
-import org.postgresql.ds.PGSimpleDataSource;
-
 import javax.sql.DataSource;
+import org.postgresql.ds.PGSimpleDataSource;
 
 public enum DataSourceProvider {
     INSTANCE;
@@ -14,8 +13,8 @@ public enum DataSourceProvider {
         if (dataSource == null) {
             pgDataSource = new PGSimpleDataSource();
 //            pgDataSource.setURL("jdbc:postgresql://localhost:5433/apartment");
-            pgDataSource.setServerNames(new String[] {"localhost"});
-            pgDataSource.setPortNumbers(new int[] {5433});
+            pgDataSource.setServerNames(new String[]{"localhost"});
+            pgDataSource.setPortNumbers(new int[]{5433});
             pgDataSource.setDatabaseName("apartment");
             pgDataSource.setUser("postgres");
             pgDataSource.setPassword("postgres");

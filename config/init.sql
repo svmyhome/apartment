@@ -11,12 +11,22 @@ $$;
 -- Подключение к базе данных apartment
 \c apartment;
 
--- Создание таблицы city
+-- Создание таблицы account
 CREATE TABLE IF NOT EXISTS public.account
 (
     id   SERIAL PRIMARY KEY,
     account VARCHAR(100) NOT NULL UNIQUE,
     balance DECIMAL(10, 2) NOT NULL
+);
+
+-- Создание таблицы account
+CREATE TABLE IF NOT EXISTS public.spend
+(
+    id   SERIAL PRIMARY KEY,
+    account_id  INTEGER      NOT NULL,
+    spend_category VARCHAR(100) NOT NULL,
+    balance DECIMAL(10, 2) NOT NULL,
+    CONSTRAINT fk_account FOREIGN KEY (account_id) REFERENCES account (id) ON DELETE RESTRICT
 );
 
 -- Создание таблицы city

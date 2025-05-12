@@ -18,9 +18,9 @@ public enum ItemCategory {
         this.description = description;
     }
 
-    public static ItemCategory findCategory(String description) {
+    public static ItemCategory findItemCategory(String description) {
         return Arrays.stream(values())
-                .filter(category -> category.getDescription().equals(description))
+                .filter(itemCategory -> itemCategory.getDescription().equals(description))
                 .findFirst().orElseThrow();
     }
 }
