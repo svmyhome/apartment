@@ -1,10 +1,10 @@
 package apartment.db.impl;
 
-import apartment.db.repository.RoomsRepository;
+import apartment.db.repository.RoomRepository;
 import apartment.entity.RoomEntity;
 import java.util.List;
 
-public class RoomsRepositoryManagerPostgres implements RoomsRepository {
+public class RoomRepositoryPostgres implements RoomRepository {
     @Override
     public int createRoom(RoomEntity room) {
         return 0;

@@ -4,7 +4,7 @@ import apartment.db.repository.CategoryRepository;
 import java.util.List;
 import jdk.jfr.Category;
 
-public class CategoryRepositoryManagerPostgres implements CategoryRepository {
+public class CategoryRepositoryPostgres implements CategoryRepository {
     @Override
     public int createCategory(Category category) {
         return 0;

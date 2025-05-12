@@ -4,7 +4,7 @@ import apartment.db.repository.ApartmentAddressRepository;
 import apartment.entity.ApartmentAddressEntity;
 import java.util.List;
 
-public class ApartmentAddressRepositoryManagerPostgres implements ApartmentAddressRepository {
+public class ApartmentAddressRepositoryPostgres implements ApartmentAddressRepository {
     @Override
     public int createAddress(String address) {
         return 0;

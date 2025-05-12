@@ -5,7 +5,7 @@ import apartment.entity.ApartmentAddressEntity;
 import apartment.entity.ApartmentStuffEntity;
 import java.util.List;
 
-public class ApartmentStuffRepositoryManagerPostgres implements ApartmentStuffRepository {
+public class ApartmentStuffRepositoryPostgres implements ApartmentStuffRepository {
     @Override
     public List<ApartmentStuffEntity> getAll() {
         return List.of();

@@ -7,10 +7,12 @@ public class Application {
     CityService cityService = new CityService();
 
     public void run() {
+        accountService.showAllAccounts();
         AccountEntity accountEntity = accountService.login();
         accountService.showCurrentBalance(accountEntity);
         // TODO ALSO NED SHOW Apartment
         cityService.showAllCities();
+        accountService.showAllAccounts();
     }
 
 }

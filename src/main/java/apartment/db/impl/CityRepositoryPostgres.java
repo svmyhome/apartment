@@ -11,7 +11,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.lang.Nullable;
 
-public class CityRepositoryManagerPostgres implements CityRepository {
+public class CityRepositoryPostgres implements CityRepository {
 
     private static final JdbcTemplate jdbcTemplate = new JdbcTemplate(DataSourceProvider.INSTANCE.getDataSource());
 

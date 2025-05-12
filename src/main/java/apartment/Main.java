@@ -1,12 +1,12 @@
 package apartment;
 
-import apartment.db.impl.CityRepositoryManagerPostgres;
+import apartment.db.impl.CityRepositoryPostgres;
 import apartment.db.repository.CityRepository;
 import apartment.service.Application;
 
 public class Main {
 
-    static CityRepository cityRepository = new CityRepositoryManagerPostgres();
+    static CityRepository cityRepository = new CityRepositoryPostgres();
 
     public static void main(String[] args) {
         new Application().run();

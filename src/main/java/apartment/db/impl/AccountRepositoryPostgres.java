@@ -9,7 +9,7 @@ import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.lang.Nullable;
 
-public class AccountRepositoryManagerPostgres implements AccountRepository {
+public class AccountRepositoryPostgres implements AccountRepository {
 
     private static final JdbcTemplate jdbcTemplate = new JdbcTemplate(DataSourceProvider.INSTANCE.getDataSource());
 

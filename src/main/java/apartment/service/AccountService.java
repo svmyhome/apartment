@@ -1,13 +1,13 @@
 package apartment.service;
 
-import apartment.db.impl.AccountRepositoryManagerPostgres;
+import apartment.db.impl.AccountRepositoryPostgres;
 import apartment.db.repository.AccountRepository;
 import apartment.entity.AccountEntity;
 import javax.swing.*;
 
 public class AccountService {
 
-    AccountRepository accountRepository = new AccountRepositoryManagerPostgres();
+    AccountRepository accountRepository = new AccountRepositoryPostgres();
 
     public AccountEntity login() {
         String accountName = JOptionPane.showInputDialog("Введите имя: ");
@@ -32,6 +32,12 @@ public class AccountService {
         JOptionPane.showMessageDialog(null, "Текущий баланс: " + account.getBalance(),
                 "Баланс", JOptionPane.INFORMATION_MESSAGE);
 
+    }
+
+    public void showAllAccounts() {
+        JOptionPane.showMessageDialog(null,
+                "Список всех прользователей: " + accountRepository.getAll(),
+                "Список пользователей", JOptionPane.INFORMATION_MESSAGE);
     }
 
 
