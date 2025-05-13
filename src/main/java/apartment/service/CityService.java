@@ -5,7 +5,7 @@ import apartment.db.repository.CityRepository;
 import javax.swing.*;
 
 public class CityService {
-    CityRepository cityRepository = new CityRepositoryPostgres();
+    private CityRepository cityRepository = new CityRepositoryPostgres();
 
     public void showAllCities() {
         JOptionPane.showMessageDialog(null, "Список городов: " + cityRepository.getAllCity(),

@@ -1,10 +1,13 @@
 package apartment.entity;
 
+import apartment.data.ItemCategory;
+
 public class SpendEntity {
     private int id;
     private int account_id;
-    private String spendCategory;
-    private double balance;
+    private ItemCategory spendCategory;
+    private double spend;
+    private String description;
 
     public int getId() {
         return id;
@@ -24,21 +27,30 @@ public class SpendEntity {
         return this;
     }
 
-    public String getSpendCategory() {
+    public ItemCategory getSpendCategory() {
         return spendCategory;
     }
 
-    public SpendEntity setSpendCategory(String spendCategory) {
+    public SpendEntity setSpendCategory(ItemCategory spendCategory) {
         this.spendCategory = spendCategory;
         return this;
     }
 
-    public double getBalance() {
-        return balance;
+    public double getSpend() {
+        return spend;
     }
 
-    public SpendEntity setBalance(double balance) {
-        this.balance = balance;
+    public SpendEntity setSpend(double spend) {
+        this.spend = spend;
+        return this;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public SpendEntity setDescription(String description) {
+        this.description = description;
         return this;
     }
 }

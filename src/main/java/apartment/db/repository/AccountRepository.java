@@ -10,4 +10,6 @@ public interface AccountRepository {
 
     void addAccount(AccountEntity account);
 
+    void updateAccount(AccountEntity account);
+
 }

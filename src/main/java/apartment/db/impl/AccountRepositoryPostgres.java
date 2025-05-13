@@ -21,7 +21,8 @@ public class AccountRepositoryPostgres implements AccountRepository {
     @Override
     public @Nullable AccountEntity getByName(String account) {
         try {
-            return jdbcTemplate.queryForObject("SELECT * FROM account WHERE account = ?", new AccountEntityRowMapper(), account);
+            return jdbcTemplate.queryForObject("SELECT * FROM account WHERE account = ?",
+                    new AccountEntityRowMapper(), account);
         } catch (EmptyResultDataAccessException e) {
             return null;
         }
@@ -29,6 +30,13 @@ public class AccountRepositoryPostgres implements AccountRepository {
 
     @Override
     public void addAccount(AccountEntity account) {
-        jdbcTemplate.update("INSERT INTO account (account, balance) values(?,?)", account.getAccount(), account.getBalance());
+        jdbcTemplate.update("INSERT INTO account (account, balance) values(?,?)",
+                account.getAccount(), account.getBalance());
+    }
+
+    @Override
+    public void updateAccount(AccountEntity account) {
+        jdbcTemplate.update("UPDATE account SET account = ?, balance = ?",
+                account.getAccount(), account.getBalance());
     }
 }

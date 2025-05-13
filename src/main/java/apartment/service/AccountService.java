@@ -7,12 +7,12 @@ import javax.swing.*;
 
 public class AccountService {
 
-    AccountRepository accountRepository = new AccountRepositoryPostgres();
+    private AccountRepository accountRepository = new AccountRepositoryPostgres();
 
     public AccountEntity login() {
         String accountName = JOptionPane.showInputDialog("Введите имя: ");
-        AccountEntity account = accountRepository.getByName(accountName);
-        if (account == null) {
+        AccountEntity workAccount = accountRepository.getByName(accountName);
+        if (workAccount == null) {
             double balance = Double.parseDouble(JOptionPane.showInputDialog("Введите балансе: "));
             AccountEntity newAccount = new AccountEntity()
                     .setAccount(accountName)
@@ -24,7 +24,7 @@ public class AccountService {
         } else {
             accountRepository.getAll().forEach(System.out::println);
             System.out.println(accountRepository.getByName("Voldemar"));
-            return account;
+            return workAccount;
         }
     }
 
@@ -36,7 +36,7 @@ public class AccountService {
 
     public void showAllAccounts() {
         JOptionPane.showMessageDialog(null,
-                "Список всех прользователей: " + accountRepository.getAll(),
+                "Список всех пользователей: " + accountRepository.getAll(),
                 "Список пользователей", JOptionPane.INFORMATION_MESSAGE);
     }
 

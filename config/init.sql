@@ -19,13 +19,14 @@ CREATE TABLE IF NOT EXISTS public.account
     balance DECIMAL(10, 2) NOT NULL
 );
 
--- Создание таблицы account
+-- Создание таблицы spend
 CREATE TABLE IF NOT EXISTS public.spend
 (
     id   SERIAL PRIMARY KEY,
     account_id  INTEGER      NOT NULL,
     spend_category VARCHAR(100) NOT NULL,
-    balance DECIMAL(10, 2) NOT NULL,
+    spend DECIMAL(10, 2) NOT NULL,
+    description VARCHAR(200) NOT NULL,
     CONSTRAINT fk_account FOREIGN KEY (account_id) REFERENCES account (id) ON DELETE RESTRICT
 );
 

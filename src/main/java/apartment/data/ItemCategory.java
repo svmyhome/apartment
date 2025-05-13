@@ -6,6 +6,7 @@ import java.util.Arrays;
 public enum ItemCategory {
     ELECTRONICS("Электроника"),
     FURNITURE("Мебель"),
+    FLOWER("Цветы"),
     OTHER("Прочее");
 
     public String getDescription() {
