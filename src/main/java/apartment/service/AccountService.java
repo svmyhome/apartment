@@ -21,10 +21,15 @@ public class AccountService {
             accountRepository.addAccount(newAccount);
             accountRepository.getAll().forEach(System.out::println);
             System.out.println(accountRepository.getByName("Voldemar"));
-            return accountRepository.getByName(accountName);
+            workAccount = accountRepository.getByName(accountName);
+            showCurrentBalance(workAccount);
+            return workAccount;
         } else {
+            showCurrentBalance(workAccount);
             accountRepository.getAll().forEach(System.out::println);
             System.out.println(accountRepository.getByName("Voldemar"));
+            updateAccountBalance(workAccount);
+            showCurrentBalance(workAccount);
             return workAccount;
         }
     }

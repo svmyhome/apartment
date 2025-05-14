@@ -118,3 +118,6 @@ erDiagram
         integer item_id FK
     }
 ```
+
+SELECT * FROM apartment_address join city on account_id = city.id WHERE account_id=1
+SELECT distinct(name) FROM apartment_address join city on city_id = city.id WHERE account_id=1

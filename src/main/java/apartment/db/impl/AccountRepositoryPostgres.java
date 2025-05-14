@@ -36,7 +36,7 @@ public class AccountRepositoryPostgres implements AccountRepository {
 
     @Override
     public void updateAccount(AccountEntity account) {
-        jdbcTemplate.update("UPDATE account SET account = ?, balance = ?",
-                account.getAccount(), account.getBalance());
+        jdbcTemplate.update("UPDATE account SET balance = ? WHERE account=?",
+                account.getBalance(), account.getAccount());
     }
 }

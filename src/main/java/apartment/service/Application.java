@@ -7,18 +7,23 @@ public class Application {
     private CityService cityService = new CityService();
     private SpendService spendService = new SpendService();
 
+
+
     public void run() {
 //        accountService.showAllAccounts();
         AccountEntity accountEntity = accountService.login();
-        accountService.showCurrentBalance(accountEntity);
-        accountService.updateAccountBalance(accountEntity);
-        accountService.showCurrentBalance(accountEntity);
+//        accountService.showCurrentBalance(accountEntity);
+//        accountService.updateAccountBalance(accountEntity);
+//        accountService.showCurrentBalance(accountEntity);
+//        cityService.showAllCities1(accountEntity);
+
         // TODO ALSO NED SHOW Apartment
 //        cityService.showAllCities();
 //        accountService.showAllAccounts();
         spendService.doSpend(accountEntity);
         accountService.showCurrentBalance(accountEntity);
         spendService.showAllSpends(accountEntity);
+
     }
 
 }
