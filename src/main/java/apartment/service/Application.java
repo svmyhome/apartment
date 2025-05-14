@@ -11,6 +11,8 @@ public class Application {
 //        accountService.showAllAccounts();
         AccountEntity accountEntity = accountService.login();
         accountService.showCurrentBalance(accountEntity);
+        accountService.updateAccountBalance(accountEntity);
+        accountService.showCurrentBalance(accountEntity);
         // TODO ALSO NED SHOW Apartment
 //        cityService.showAllCities();
 //        accountService.showAllAccounts();

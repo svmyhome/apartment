@@ -5,6 +5,7 @@ import apartment.db.repository.AccountRepository;
 import apartment.entity.AccountEntity;
 import javax.swing.*;
 
+
 public class AccountService {
 
     private AccountRepository accountRepository = new AccountRepositoryPostgres();
@@ -31,8 +32,17 @@ public class AccountService {
     public void showCurrentBalance(AccountEntity account) {
         JOptionPane.showMessageDialog(null, "Текущий баланс: " + account.getBalance(),
                 "Баланс", JOptionPane.INFORMATION_MESSAGE);
-
     }
+
+    public void updateAccountBalance(AccountEntity account) {
+        String isAmountIncrease = JOptionPane.showInputDialog("Вы хотите увеличить баланс, напишите Yes|No: ");
+        if("Yes".equals(isAmountIncrease)) {
+            double amountIncrease = Double.parseDouble(JOptionPane.showInputDialog("Введите сумму на которую хотите увеличить баланс: "));
+            account.setBalance(account.getBalance() + amountIncrease);
+            accountRepository.updateAccount(account);
+        }
+    }
+
 
     public void showAllAccounts() {
         JOptionPane.showMessageDialog(null,
