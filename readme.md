@@ -1,16 +1,15 @@
-# Проект обстановки квартиры
+# Проект по подсчету затрат на обустройство квартиры
+Позволяет учитывать мебель, технику, и другие элементы интерьера, формируя детализированную смету по комнатам
 
 ### Технологии
-
-для визуализации схем в readme.md нужно установить плагин mermaid
-
 - Java
 - Docker
 - Postgres
 
-### Docker
+Для визуализации схем в readme.md нужно установить плагин mermaid
 
-#### запуск в контейнере необходимой версии PostgreSQL, переопределение суперпользователя и создание базы данных с нужным именем
+### Docker
+#### Запуск в контейнере необходимой версии PostgreSQL, переопределение суперпользователя и создание базы данных с нужным именем
 
 ```
 docker run --name appart-pg-17.2 -p 5433:5432 -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=apartment -d postgres:17.2
@@ -20,9 +19,7 @@ docker run --name appart-pg-17.2 -p 5433:5432 -e POSTGRES_USER=postgres -e POSTG
 docker compose up -d
 ```
 
-Инициализацию БД можно запустить через однострочник, но в этом случае требуется указывать абсолютный путь до каталога со
-скриптами:
-
+#### Инициализацию БД можно запустить через однострочник, но в этом случае требуется указывать абсолютный путь до каталога со скриптами:
 ```
 docker run --name appart-pg-17.2 -p 5433:5432 -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=apartment  -d -v "/absolute/path/to/directory-with-init-scripts":/docker-entrypoint-initdb.d postgres:17.2
 ```
@@ -31,17 +28,17 @@ docker run --name appart-pg-17.2 -p 5433:5432 -e POSTGRES_USER=postgres -e POSTG
 psql -U postgres -d apartment
 ```
 
-### Скрипт удаляет всё контейнеры, образы, тома, сети одной командой
-
+#### Скрипт удаляет всё контейнеры, образы, тома, сети одной командой
 ```
 ./clean-docker.sh
 ```
 
-### Скрипт автоматизирует очистку и перезапуск Docker Compose ( Остановка и удаление контейнеров, сетей и томов и "висячих" образов)
-
+#### Скрипт автоматизирует очистку и перезапуск Docker Compose (Остановка и удаление контейнеров, сетей и томов и "висячих" образов)
 ```
 ./restart-docker-compose.sh
 ```
+
+### Postgres
 
 ```mermaid
 flowchart TD
@@ -52,8 +49,7 @@ flowchart TD
     AccountManagerRepositoryPostgres -- implements --> AccountRepository
 ```
 
-
-Связи:
+#### Связи:
 
 city ||--o{ apartment_address: Один город может иметь много адресов квартир (связь "один ко многим").
 
