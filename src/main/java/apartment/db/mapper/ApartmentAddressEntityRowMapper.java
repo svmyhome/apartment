@@ -11,10 +11,10 @@ public class ApartmentAddressEntityRowMapper implements RowMapper<ApartmentAddre
     public ApartmentAddressEntity mapRow(ResultSet rs, int rowNum) throws SQLException {
         return new ApartmentAddressEntity()
                 .setId(rs.getInt("id"))
-                .setAccountId(rs.getInt("accountId"))
-                .setCityId(rs.getInt("cityId"))
+                .setAccountId(rs.getInt("account_id"))
+                .setCityId(rs.getInt("city_id"))
                 .setStreet(rs.getString("street"))
                 .setHouse(rs.getString("house"))
-                .setFlatNumber(rs.getString("house"));
+                .setFlatNumber(rs.getString("flat_number"));
     }
 }

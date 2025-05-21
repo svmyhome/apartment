@@ -25,8 +25,15 @@ public class CityService {
 
     }
 
-    public void showAllCities1(AccountEntity account) {
-        System.out.println(addressRepository.getAllForAccount(account));
+    public void showAllCitiesForUser(AccountEntity account) {
+        JOptionPane.showMessageDialog(null, "Список городов: " + addressRepository.getAllForAccount(account),
+                "Список городов", JOptionPane.INFORMATION_MESSAGE);
+
+    }
+
+    public void showAllCitiesForUser111(AccountEntity account) {
+        JOptionPane.showMessageDialog(null, "Список городов: " + addressRepository.showAllCitiesForUser111(account),
+                "Список городов", JOptionPane.INFORMATION_MESSAGE);
 
     }
 

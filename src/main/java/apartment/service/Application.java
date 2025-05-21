@@ -12,6 +12,7 @@ public class Application {
     public void run() {
 //        accountService.showAllAccounts();
         AccountEntity accountEntity = accountService.login();
+        cityService.showAllCitiesForUser111(accountEntity);
 //        accountService.showCurrentBalance(accountEntity);
 //        accountService.updateAccountBalance(accountEntity);
 //        accountService.showCurrentBalance(accountEntity);

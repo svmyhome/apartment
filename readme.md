@@ -20,7 +20,7 @@
 
 
 ### Docker
-#### Запуск в контейнере необходимой версии PostgreSQL, переопределение суперпользователя и создание базы данных с нужным именем
+#### Запуск в контейнере необходимой версии PostgresSQL, переопределение суперпользователя и создание базы данных с нужным именем
 
 ```
 docker run --name appart-pg-17.2 -p 5433:5432 -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=apartment -d postgres:17.2

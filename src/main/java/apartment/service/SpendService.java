@@ -28,8 +28,8 @@ public class SpendService {
         );
 
         ItemCategory selected = ItemCategory.values()[index];
+        String description = JOptionPane.showInputDialog("Введите описание траты: ");
         double spendValue = Double.parseDouble(JOptionPane.showInputDialog("Введите сумму: "));
-        String description = JOptionPane.showInputDialog("введите описание траты: ");
         if (isSpendAcceptedForGivenUser(account, spendValue)) {
             SpendEntity spend = new SpendEntity()
                     .setSpend(spendValue)

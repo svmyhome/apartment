@@ -1,18 +1,19 @@
 package apartment.entity;
 
-public class ApartmentAddressEntity {
+public class ApartmentAddressAndCityEntity {
     private int id;
     private int accountId;
     private int cityId;
     private String street;
     private String house;
     private String flatNumber;
+    private String city;
 
     public int getId() {
         return id;
     }
 
-    public ApartmentAddressEntity setId(int id) {
+    public ApartmentAddressAndCityEntity setId(int id) {
         this.id = id;
         return this;
     }
@@ -21,7 +22,7 @@ public class ApartmentAddressEntity {
         return accountId;
     }
 
-    public ApartmentAddressEntity setAccountId(int accountId) {
+    public ApartmentAddressAndCityEntity setAccountId(int accountId) {
         this.accountId = accountId;
         return this;
     }
@@ -30,7 +31,7 @@ public class ApartmentAddressEntity {
         return cityId;
     }
 
-    public ApartmentAddressEntity setCityId(int cityId) {
+    public ApartmentAddressAndCityEntity setCityId(int cityId) {
         this.cityId = cityId;
         return this;
     }
@@ -39,7 +40,7 @@ public class ApartmentAddressEntity {
         return street;
     }
 
-    public ApartmentAddressEntity setStreet(String street) {
+    public ApartmentAddressAndCityEntity setStreet(String street) {
         this.street = street;
         return this;
     }
@@ -48,7 +49,7 @@ public class ApartmentAddressEntity {
         return house;
     }
 
-    public ApartmentAddressEntity setHouse(String house) {
+    public ApartmentAddressAndCityEntity setHouse(String house) {
         this.house = house;
         return this;
     }
@@ -57,20 +58,30 @@ public class ApartmentAddressEntity {
         return flatNumber;
     }
 
-    public ApartmentAddressEntity setFlatNumber(String flatNumber) {
+    public ApartmentAddressAndCityEntity setFlatNumber(String flatNumber) {
         this.flatNumber = flatNumber;
         return this;
     }
 
+    public String getCity() {
+        return city;
+    }
+
+    public ApartmentAddressAndCityEntity setCity(String city) {
+        this.city = city;
+        return this;  // Возвращаем this для fluent-стиля
+    }
+
     @Override
     public String toString() {
-        return "ApartmentAddressEntity{" +
+        return "ApartmentAddressAndCityEntity{" +
                 "id=" + id +
                 ", accountId=" + accountId +
                 ", cityId=" + cityId +
                 ", street='" + street + '\'' +
                 ", house='" + house + '\'' +
                 ", flatNumber='" + flatNumber + '\'' +
+                ", city='" + city + '\'' +
                 '}';
     }
 }
