@@ -11,8 +11,8 @@ public class ApartmentStuffEntityRowMapper implements RowMapper<ApartmentStuffEn
     public ApartmentStuffEntity mapRow(ResultSet rs, int rowNum) throws SQLException {
         return new ApartmentStuffEntity()
                 .setId(rs.getInt("id"))
-                .setFlatId(rs.getInt("flatId"))
-                .setRoomId(rs.getInt("roomId"))
-                .setItemId(rs.getInt("itemId"));
+                .setFlatId(rs.getInt("flat_id"))
+                .setRoomId(rs.getInt("room_id"))
+                .setItemId(rs.getInt("item_id"));
     }
 }

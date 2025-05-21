@@ -23,6 +23,6 @@ public class SelectToDB {
         System.out.println(workAccount);
         System.out.println(cityRepository.getAllCity());
         System.out.println(addressRepositoryPostgres.getAllForAccount(workAccount));
-        System.out.println(addressRepositoryPostgres.getAll());
+        System.out.println(apartmentStuffRepositoryPostgres.getAll());
     }
 }

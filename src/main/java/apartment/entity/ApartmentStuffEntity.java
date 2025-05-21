@@ -41,4 +41,14 @@ public class ApartmentStuffEntity {
         this.itemId = itemId;
         return this;
     }
+
+    @Override
+    public String toString() {
+        return "ApartmentStuffEntity{" +
+                "id=" + id +
+                ", flatId=" + flatId +
+                ", roomId=" + roomId +
+                ", itemId=" + itemId +
+                '}';
+    }
 }
